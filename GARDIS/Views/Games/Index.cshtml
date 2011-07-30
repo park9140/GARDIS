@@ -1,0 +1,59 @@
+@model IEnumerable<GARDIS.Models.Game>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Name
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Type
+        </th>
+        <th>
+            Category
+        </th>
+        <th>
+            Players
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+        <td>
+			@item.Name
+        </td>
+        <td>
+			@item.Description
+        </td>
+        <td>
+			@(item.Type == null ? "None" : item.Type.Name)
+        </td>
+        <td>
+			@(item.Category == null ? "None" : item.Category.Name)
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.Players).ToString()
+        </td>
+    </tr>
+}
+
+</table>
+
+

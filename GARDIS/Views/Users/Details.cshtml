@@ -1,0 +1,26 @@
+@model GARDIS.Models.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>User</legend>
+
+    <div class="display-label">OpenID</div>
+    <div class="display-field">@Model.OpenID</div>
+
+    <div class="display-label">FullName</div>
+    <div class="display-field">@Model.FullName</div>
+
+    <div class="display-label">Email</div>
+    <div class="display-field">@Model.Email</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

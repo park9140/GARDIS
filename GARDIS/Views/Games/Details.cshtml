@@ -1,0 +1,32 @@
+@model GARDIS.Models.Game
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Game</legend>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">@Model.Name</div>
+
+    <div class="display-label">Description</div>
+    <div class="display-field">@Model.Description</div>
+
+    <div class="display-label">Type</div>
+    <div class="display-field">@(Model.Type == null ? "None" : Model.Type.Name)</div>
+
+    <div class="display-label">Category</div>
+    <div class="display-field">@(Model.Category == null ? "None" : Model.Category.Name)</div>
+
+    <div class="display-label">Players</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.Players).ToString()</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

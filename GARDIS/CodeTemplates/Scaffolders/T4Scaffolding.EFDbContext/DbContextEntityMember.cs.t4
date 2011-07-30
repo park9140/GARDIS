@@ -1,0 +1,2 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+public DataBase<<#= ((EnvDTE.CodeType)Model.EntityType).FullName #>> <#= Model.EntityTypeNamePluralized #>  { get { return new DataBase<<#= ((EnvDTE.CodeType)Model.EntityType).FullName #>>(); } }
